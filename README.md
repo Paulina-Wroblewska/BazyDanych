@@ -1,6 +1,7 @@
 # 🏆 Tournament Management System
 
-![Status](https://img.shields.io/badge/project-active-brightgreen)
+![Status](https://img.shields.io/badge/status-completed-blue)
+![Type](https://img.shields.io/badge/project-academic-lightgrey)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Database](https://img.shields.io/badge/database-MariaDB-lightgrey)
 
