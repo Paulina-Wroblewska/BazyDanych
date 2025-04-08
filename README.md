@@ -4,8 +4,9 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Database](https://img.shields.io/badge/database-MariaDB-lightgrey)
 
-[🇵🇱 Switch to Polish version](#)
-
+[🇬🇧 English](#-english-version) | [🇵🇱 Polski](#-wersja-polska)
+## 🇬🇧 English version
+---
 ## 📖 Project Description
 
 This project was developed as part of a university "Databases" course.  
@@ -75,6 +76,7 @@ The `turnieje` (tournaments) table is **partitioned by start date**, enabling mo
 
 **Paulina Wróblewska**  
 🔗 [LinkedIn](https://www.linkedin.com/in/paulina-wr%C3%B3blewska-2381a217b/)
+
 🔗 [GitHub](https://github.com/Paulina-Wroblewska)
 
 ---
@@ -83,6 +85,61 @@ The `turnieje` (tournaments) table is **partitioned by start date**, enabling mo
 
 - The database design supports scalability and is suitable for tournament tracking systems.
 - The project can be further expanded with application layers (API, frontend, admin panel).
+
+
+
+## 🇵🇱 Wersja polska
+---
+
+### 📖 Opis projektu
+
+Projekt zrealizowany w ramach kursu "Bazy danych". Celem było stworzenie relacyjnej bazy danych obsługującej system turniejowy. Baza umożliwia zarządzanie graczami, drużynami, turniejami oraz meczami. Zaimplementowano procedury składowane oraz partycjonowanie tabeli `turnieje`.
+
+### 🛠️ Technologie
+
+- **MariaDB**
+- **Navicat Premium** (opcjonalnie)
+
+### 🗃️ Struktura bazy danych
+
+Baza zawiera 16 tabel. Kluczowe z nich:
+
+- `gracze` – zawodnicy
+- `druzyny` – drużyny
+- `turnieje` – turnieje (z partycjonowaniem)
+- `mecze` – dane meczowe
+
+Struktura: `turnieje - structure.sql`
+
+### ⚙️ Funkcjonalności
+
+Procedury składowane:
+
+- `dodaj_gracza`
+- `dodaj_druzyne`
+- `dodaj_turniej`
+- `zmien_status_gracza`
+- `zmien_status_druzyny`
+
+Kod w: `turnieje - structure&data.sql`
+
+### 📊 Partycjonowanie
+
+Tabela `turnieje` partycjonowana według daty rozpoczęcia – poprawa wydajności zapytań czasowych.
+
+### 🚀 Uruchomienie
+
+1. Zainstaluj **MariaDB**
+2. *(Opcjonalnie)* Navicat Premium
+3. Załaduj `turnieje - structure.sql`
+4. Następnie załaduj `turnieje - structure&data.sql`
+
+### 👤 Autor
+
+**Paulina Wróblewska**  
+🔗 [LinkedIn](https://www.linkedin.com/in/paulina-wr%C3%B3blewska-2381a217b/)
+
+🔗 [GitHub](https://github.com/Paulina-Wroblewska)
 
 
 
