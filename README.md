@@ -1,53 +1,88 @@
-ENG 
+# 🏆 Tournament Management System
 
-PL
+![Status](https://img.shields.io/badge/project-active-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Database](https://img.shields.io/badge/database-MariaDB-lightgrey)
 
-# 🏆 System Zarządzania Turniejami
+[🇵🇱 Switch to Polish version](#)
 
-## 📖 Opis projektu
+## 📖 Project Description
 
-Projekt zrealizowany w ramach kursu "Bazy Danych". Celem było stworzenie relacyjnej bazy danych obsługującej system turniejowy, umożliwiającej zarządzanie graczami, drużynami, turniejami oraz meczami. Zastosowano procedury składowane oraz partycjonowanie w wybranych tabelach w celu optymalizacji działania.
+This project was developed as part of a university "Databases" course.  
+It aims to implement a **relational database system** for managing tournaments, including:
 
-## 🛠️ Technologie
+- players
+- teams
+- tournaments
+- matches
 
-- **MariaDB** – system zarządzania bazą danych
-- **Navicat Premium** (opcjonalnie) – narzędzie do zarządzania bazą danych
+To enhance efficiency, the system uses **stored procedures** and **partitioning** on the main tournament table.
 
-## 🗃️ Struktura bazy danych
+---
 
-Baza danych składa się z 16 tabel. Kluczowe z nich to:
+## 🛠️ Technologies
 
-- `gracze` – informacje o zawodnikach
-- `druzyny` – dane drużyn
-- `turnieje` – dane turniejów (z zastosowanym partycjonowaniem)
-- `mecze` – zapis przebiegu meczów
+- **MariaDB** – main relational database
+- **Navicat Premium** *(optional)* – graphical database interface
 
-Szczegółowa struktura znajduje się w pliku `turnieje - structure.sql`.
+---
 
-## ⚙️ Funkcjonalności
+## 🗃️ Database Structure
 
-Zaimplementowano następujące procedury składowane:
+The system consists of **16 relational tables**. Key entities include:
 
-- `dodaj_gracza` – dodawanie nowych graczy
-- `dodaj_druzyne` – tworzenie nowych drużyn
-- `dodaj_turniej` – organizacja nowych turniejów
-- `zmien_status_gracza` – zmiana statusu aktywności gracza
-- `zmien_status_druzyny` – zmiana statusu aktywności drużyny
+| Table       | Description                        |
+|-------------|------------------------------------|
+| `gracze`    | Stores player information          |
+| `druzyny`   | Stores team data                   |
+| `turnieje`  | Tournament records (partitioned)   |
+| `mecze`     | Match details                      |
 
-Kod procedur zawarty jest w pliku `turnieje - structure&data.sql`.
+The full schema is defined in the file `turnieje - structure.sql`.
 
-## 📊 Partycjonowanie
+---
 
-Tabela `turnieje` została zoptymalizowana poprzez partycjonowanie według daty rozpoczęcia turnieju, co poprawia wydajność zapytań dotyczących zakresów czasowych.
+## ⚙️ Features
 
-## 🚀 Instrukcja uruchomienia
+Several **stored procedures** have been implemented to simplify database operations:
 
-1. Zainstaluj **MariaDB**.
-2. *(Opcjonalnie)* Zainstaluj **Navicat Premium** lub inne narzędzie do zarządzania bazami danych.
-3. Uruchom plik `turnieje - structure.sql`, aby utworzyć strukturę bazy danych.
-4. Załaduj plik `turnieje - structure&data.sql`, aby dodać przykładowe dane oraz procedury.
+- `dodaj_gracza` – add a new player
+- `dodaj_druzyne` – add a new team
+- `dodaj_turniej` – create a tournament
+- `zmien_status_gracza` – change player active status
+- `zmien_status_druzyny` – change team active status
 
-## 👤 Autor
+The procedure definitions and sample data are available in `turnieje - structure&data.sql`.
+
+---
+
+## 📊 Table Partitioning
+
+The `turnieje` (tournaments) table is **partitioned by start date**, enabling more efficient execution of queries involving date ranges.
+
+---
+
+## 🚀 How to Run the Project
+
+1. ✅ Install **MariaDB**
+2. ⚙️ *(Optional)* Install **Navicat Premium** or a similar database management tool
+3. 🧱 Load the file `turnieje - structure.sql` to create the database schema
+4. 📥 Load `turnieje - structure&data.sql` to insert sample data and stored procedures
+
+---
+
+## 👤 Author
 
 **Paulina Wróblewska**  
-📂 Repozytorium: [github.com/Paulina-Wroblewska/BazyDanych](https://github.com/Paulina-Wroblewska/BazyDanych)
+🔗 [LinkedIn](https://www.linkedin.com/in/paulina-wr%C3%B3blewska-2381a217b/)
+🔗 [GitHub](https://github.com/Paulina-Wroblewska)
+
+---
+
+## 📌 Notes
+
+- The database design supports scalability and is suitable for tournament tracking systems.
+- The project can be further expanded with application layers (API, frontend, admin panel).
+
+
+
